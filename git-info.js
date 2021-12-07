@@ -23,6 +23,19 @@
 - SWITCH to another existing Git branch
     "git checkout <name-of-target-branch>"
 
+- MERGE changes in an old Git branch into a new / another  Git branch
+    first checkout into the new branch
+        then..
+    "git merge <old-branch-name>"
+
+
+- RENAME a Git branch
+    first...
+        "git branch -m <current-name-of-branch> <new-name-of-branch>"
+    then update the local changes to reflect remotely
+        "git push origin --delete <current-name-of-branch>"
+        "git push origin -u <new-name-of-branch"
+
 - GET info on staged or unstaged file in a Git branch
     "git status"
 
@@ -36,6 +49,11 @@
 
 - PUSH/save a Git branch to current Github working directory
     "git push origin <name-of-git-branch>"
+
+- SUBMODULE 
+    stage/add a submodule/sub-repo
+        "git submodule add <remote-repo-link> <repo-directory-name>"
+
 
 - UPDATE a pushed commit to Github-repo change on Github itself
     open the project/repo on Github
@@ -118,11 +136,19 @@
 ** If you have a local clone, you can update it by running:
     git branch -m part1 <working-branch-name>
     git fetch origin
-    git branch -u origin/<orresponding-working-branch-name> <working-branch-name>
+    git branch -u origin/<corresponding-working-branch-name> <working-branch-name>
     git remote set-head origin -a
     
 
-Connect an local branch directly to a branch on the remote repo
+CONNECT a local branch directly to a branch on the remote repo
     "git branch --set-upstream-to="origin/working-branch" working-branch"
+
+UPSTREAM your local git branch to a remote branch *Works Works! Works!!!*
+    "git push --set-upstream <remote-repo-name> <remote-branch-name>"
+        ..then
+    "git push -u"
+
+UNSTAGE a file/directory
+    "git restore --staged <name-of-file-or-directory>"
 
 */
